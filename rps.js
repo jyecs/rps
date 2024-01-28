@@ -7,28 +7,40 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     let playerChoice = playerSelection.toLowerCase();
     let displayMessage = document.querySelector("#display");
+    let computerScore = document.querySelector("#computer-score");
+    let playerScore = document.querySelector("#player-score");
+
     if (playerChoice == "rock" && computerSelection == "paper") {
         displayMessage.innerHTML = "You Lose! Paper beats Rock!";
-        return 1;
+        computerScore.innerHTML = parseInt(computerScore.innerHTML) + 1
+        return;
+
     } else if (playerChoice == "rock" && computerSelection == "scissors") {
         displayMessage.innerHTML = "You win! Rock beats Scissors!";
-        return -1;
+        playerScore.innerHTML = parseInt(playerScore.innerHTML) + 1
+        return;
     }
 
     if (playerChoice == "paper" && computerSelection == "scissors") {
         displayMessage.innerHTML = "You Lose! Scissors beats Paper!";
-        return 1;
+        computerScore.innerHTML = parseInt(computerScore.innerHTML) + 1
+        return;
+
     } else if (playerChoice == "paper" && computerSelection == "rock") {
         displayMessage.innerHTML = "You win! Paper beats Rock!";
-        return -1;
+        playerScore.innerHTML = parseInt(playerScore.innerHTML) + 1
+        return;
     }
 
     if (playerChoice == "scissors" && computerSelection == "rock") {
         displayMessage.innerHTML = "You Lose! Rock beats Scissors!";
-        return 1;
+        computerScore.innerHTML = parseInt(computerScore.innerHTML) + 1
+        return;
+
     } else if (playerChoice == "scissors" && computerSelection == "paper") {
         displayMessage.innerHTML = "You win! Scissors beats Paper!";
-        return -1;
+        playerScore.innerHTML = parseInt(playerScore.innerHTML) + 1
+        return;
     }
 
     displayMessage.innerHTML = "It was a tie!";
