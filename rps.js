@@ -6,7 +6,6 @@ function getComputerChoice() {
 // Could use some clean up, only test playerChoice once.
 function playRound(playerSelection, computerSelection) {
     let playerChoice = playerSelection.toLowerCase();
-    console.log(`${playerChoice} ${computerSelection}`);
     let displayMessage = document.querySelector("#display");
     if (playerChoice == "rock" && computerSelection == "paper") {
         displayMessage.innerHTML = "You Lose! Paper beats Rock!";
