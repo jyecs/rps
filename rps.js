@@ -3,36 +3,36 @@ function getComputerChoice() {
     return choices[Math.floor(Math.random() * 3)];
 }
 
+// Could use some clean up, only test playerChoice once.
 function playRound(playerSelection, computerSelection) {
     let playerChoice = playerSelection.toLowerCase();
     console.log(`${playerChoice} ${computerSelection}`);
+    let displayMessage = document.querySelector("#display");
     if (playerChoice == "rock" && computerSelection == "paper") {
-        console.log("You Lose! Paper beats Rock!");
+        displayMessage.innerHTML = "You Lose! Paper beats Rock!";
         return 1;
     } else if (playerChoice == "rock" && computerSelection == "scissors") {
-        console.log("You win! Rock beats Scissors!");
+        displayMessage.innerHTML = "You win! Rock beats Scissors!";
         return -1;
     }
 
     if (playerChoice == "paper" && computerSelection == "scissors") {
-        console.log("You Lose! Scissors beats Paper!");
+        displayMessage.innerHTML = "You Lose! Scissors beats Paper!";
         return 1;
     } else if (playerChoice == "paper" && computerSelection == "rock") {
-        console.log("You win! Paper beats Rock!");
+        displayMessage.innerHTML = "You win! Paper beats Rock!";
         return -1;
     }
 
     if (playerChoice == "scissors" && computerSelection == "rock") {
-        console.log("You Lose! Rock beats Scissors!");
+        displayMessage.innerHTML = "You Lose! Rock beats Scissors!";
         return 1;
     } else if (playerChoice == "scissors" && computerSelection == "paper") {
-        console.log("You win! Scissors beats Paper!");
+        displayMessage.innerHTML = "You win! Scissors beats Paper!";
         return -1;
     }
 
-    //replay during tie;
-    console.log("It's a tie! Playing again.");
-    playRound(playerSelection, getComputerChoice());
+    displayMessage.innerHTML = "It was a tie!";
 }
 
 const buttons = document.querySelectorAll('button');
