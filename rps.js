@@ -47,4 +47,12 @@ function game() {
         console.log("You lost against the computer!");
     }
 }
-game();
+
+const buttons = document.querySelectorAll('button');
+console.log(buttons);
+buttons.forEach((button) => {
+    console.log("reached");
+    button.addEventListener('click', function(e) {
+        console.log(e.target);
+    });
+});
